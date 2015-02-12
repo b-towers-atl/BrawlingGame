@@ -10,11 +10,11 @@
 + fork my BrawlingGame repo to your own account
 + clone your new forked repo to desktop (button is on right side of website... should show up in your mac app)
 + change player attack func to return newHealth after damage
-- in contact if newHealth is <= 0 then remove pNode from scene
-- recreate pNode and add back to scene
-- reset player health
++ in contact if newHealth is <= 0 then remove pNode from scene
++ recreate pNode and add back to scene
++ reset player health
 - add a death count to Player and add death every time a player dies
-- add a player to the ProjectileNode
+- add a player to the ProjectileNode (why?)
 - add a kill count to Player add a kill to a projectile.player when a player dies
 */
 

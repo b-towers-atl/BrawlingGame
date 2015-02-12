@@ -45,6 +45,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             pNode.player?.attackWithDamage(projectile.damage)
             
+            if pNode.player?.healthPoints <= 0 {
+                
+                pNode.removeFromParent()
+                
+                // respawn player
+                playerReady(pNode.player!)
+                
+                // reset health points to 100
+                pNode.player?.healthPoints = 100
+                
+            }
+            
             projectile.removeFromParent()
             
         } else if contact.bodyB.categoryBitMask == NodeType.Projectile.rawValue && contact.bodyA.categoryBitMask == NodeType.Player.rawValue {
@@ -57,6 +69,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let pNode = contact.bodyA.node as PlayerNode
             
             pNode.player?.attackWithDamage(projectile.damage)
+            
+            if pNode.player?.healthPoints <= 0 {
+                
+                pNode.removeFromParent()
+                
+                // respawn player
+                playerReady(pNode.player!)
+                
+                // reset health points to 100
+                pNode.player?.healthPoints = 100
+                
+            }
             
             projectile.removeFromParent()
             
